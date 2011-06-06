@@ -49,6 +49,10 @@ on boot
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
 
+# Generate /data/system/ms3c_yamaha.cfg
+    sensorcalibutil_yamaha
+    chmod 777 /data/system/ms3c_yamaha.cfg
+    
 on property:init.svc.hciattach=running
     write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
     write /proc/bluetooth/sleep/proto 1
