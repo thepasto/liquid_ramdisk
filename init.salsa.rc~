@@ -39,37 +39,14 @@ on boot
     chown dhcp dhcp /data/misc/dhcp
 
 # Ril
-    mkdir /data/radio 0777 system system
-    chmod 0777 /dev/oncrpc
-    chmod 0777 /dev/oncrpc/00000000:0
-    chmod 0777 /dev/oncrpc/30000000:fd767954
-    chmod 0777 /dev/oncrpc/30000003:d03123cc
-    chmod 0777 /dev/oncrpc/3000000e:00040000
-    chmod 0777 /dev/oncrpc/30000012:00010000
-    chmod 0777 /dev/oncrpc/30000014:cf2ba98e
-    chmod 0777 /dev/oncrpc/30000015:00010000
-    chmod 0777 /dev/oncrpc/30000015:731f0000
-    chmod 0777 /dev/oncrpc/30000016:d6bb93e6
-    chmod 0777 /dev/oncrpc/30000019:821a1945
-    chmod 0777 /dev/oncrpc/3000001b:90258183
-    chmod 0777 /dev/oncrpc/3000001d:00010000
-    chmod 0777 /dev/oncrpc/3000003c:beb78360
-    chmod 0777 /dev/oncrpc/30000048:00010000
-    chmod 0777 /dev/oncrpc/3000005b:a60286b0
-    chmod 0777 /dev/oncrpc/3000005d:00000000
-    chmod 0777 /dev/oncrpc/3000005d:00010000
-    chmod 0777 /dev/oncrpc/3000005d:9202a8e4
-    chmod 0777 /dev/oncrpc/3000005f:00010000
-    chmod 0777 /dev/oncrpc/30000060:00010000
-    chmod 0777 /dev/oncrpc/30000061:00010000
-    chmod 0777 /dev/oncrpc/30000064:00010000
-    chmod 0777 /dev/oncrpc/3000006b:00010000
-    chmod 0777 /dev/oncrpc/30000080:00010000
-    chmod 0777 /dev/oncrpc/30000081:00010000
-    chmod 0777 /dev/oncrpc/30000089:00010000
-    chmod 0777 /dev/oncrpc/3000008c:00040000
-    chmod 0777 /dev/oncrpc/30000091:00010000
-    chmod 0777 /dev/oncrpc/3000fe00:a82d4624
+    chown root radio /dev/diag
+    chown root radio /dev/oncrpc/30000016:d6bb93e6
+    chown root radio /dev/oncrpc/30000000:fd767954
+    chown root radio /dev/oncrpc/30000019:821a1945
+    chown root radio /dev/oncrpc/3000003c:beb78360
+    chown root radio /dev/oncrpc/30000012:00010000
+    chown root radio /dev/oncrpc/30000003:d03123cc
+    chown root radio /dev/oncrpc/3000000e:00040000
 
 # Fast dormancy settings
     setprop ro.ril.fast.dormancy.rule 1
