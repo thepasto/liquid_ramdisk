@@ -7,3 +7,5 @@
 /dev/tca6507		  0777   system     system
 /dev/tpa2018		  0777   system     system
 /dev/pmem_smipool	  0666   system     system
+/dev/system_bus_freq 	  0660   system	    system
+/dev/acer-hs      	  0660   system	    system
