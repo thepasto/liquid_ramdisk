@@ -30,8 +30,6 @@ on boot
     write /sys/class/rfkill/rfkill0/state 0
     chmod 0666 /dev/ttyHS1
     
-    symlink /dev/kgsl-3d0 /dev/kgsl 
-
     chown system system /sys/bus/platform/devices/msm_sdcc.1/polling
     chown system system /sys/bus/platform/devices/msm_sdcc.2/polling
     chown system system /sys/bus/platform/devices/msm_sdcc.3/polling
@@ -62,7 +60,6 @@ on boot
     mkdir /data/radio 0777 system system
 
     start sysinit
-on property:cm.filesystem.ready=1
 class_start default
 
 # USB host support
@@ -105,19 +102,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL -d eth0
-    disabled
-    oneshot
-    
-service iprenew_eth0 /system/bin/dhcpcd -n
-    group dhcp
-    disabled
-    oneshot
-
-service autoip /system/bin/dhcpcd -B -d eth0
-    class WLAN
-    #user system  #- this makes socket() calls fail with permission denied
-    group dhcp
+service dhcpcd_eth0 /system/bin/dhcpcd -BK -t 30
     disabled
     oneshot
 
